@@ -1,4 +1,4 @@
-import ButtonAuth from '@/components/Button'
+import ButtonAuth from '@/components/Button/Button'
 import React from 'react'
 
 const HomePage = () => {

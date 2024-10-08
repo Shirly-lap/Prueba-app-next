@@ -1,7 +1,9 @@
-import NextAuth, { NextAuthOptions, Session, User } from "next-auth";
+import NextAuth, { User } from "next-auth";
 import { AdapterUser } from "next-auth/adapters";
-import { JWT } from "next-auth/jwt";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { JWT } from "next-auth/jwt";
+import { Session } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 
 interface Credentials {
   username: string;
@@ -31,7 +33,6 @@ interface JWTAuthenticate extends JWT {
   access_token: string;
   user:         IUser;
 }
-
 
 const handler:NextAuthOptions = NextAuth({
   providers: [
@@ -91,4 +92,4 @@ const handler:NextAuthOptions = NextAuth({
   },
 });
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };
